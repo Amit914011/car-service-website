@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer utilities{
+    .box-shadow{
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    }
+   .bg-color{
+    background: linear-gradient(90deg, rgba(66,56,250,1) 0%, rgba(0,0,113,0.8211659663865546) 46%, rgba(0,5,161,0.8407738095238095) 79%, rgba(255,64,64,1) 100%);
+   }
+   .button-color{
+    background: linear-gradient(90deg, rgba(66,56,250,1) 0%, rgba(0,0,113,0.8211659663865546) 46%, rgba(0,5,161,0.8407738095238095) 79%, rgba(122,125,218,0.8407738095238095) 98%);
+   }
+}
