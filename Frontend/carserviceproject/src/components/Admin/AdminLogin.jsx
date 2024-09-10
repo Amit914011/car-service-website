@@ -1,8 +1,6 @@
-import axios from 'axios';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const AdminLogin = () => {
   const [isLogin, setIsLogin] = useState(true); // Toggle between login and sign up
   const [formData, setFormData] = useState({
     email: '',
@@ -12,16 +10,11 @@ const Login = () => {
   });
   const [errors, setErrors] = useState({});
 
-  let navigator=useNavigate()
   // Handle input change
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // async function handleSubmit(e) {
-  //   e.preventDefault()
-  //   await axios.post('http://localhost:5000/api/clientSignupData',formData)
-  // }
   // Validate form
   const validate = () => {
     let validationErrors = {};
@@ -51,7 +44,7 @@ const Login = () => {
   };
 
   // Handle form submission
-  const  handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (validate()) {
       if (isLogin) {
@@ -59,15 +52,10 @@ const Login = () => {
         console.log('Login data:', formData);
       } else {
         // Handle signup submission
-        axios.post('http://localhost:5000/api/clientSignupData',formData)
         console.log('Sign up data:', formData);
       }
     }
   };
-  // async function handleSubmit(e) {
-  //   e.preventDefault();
-  //   axios.post('http://localhost:5000/api/clientSignupData',formData) 
-  // }
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
@@ -164,4 +152,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default AdminLogin;
